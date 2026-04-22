@@ -1,70 +1,162 @@
-html,
-body {
+/* base styles! - removing the nasty default browser spacing */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: "Georgia", serif;
+  background-color: #eef2f7;
+  color: #2c2c2c;
+  background-repeat: repeat;
+}
+
+/* header here, aiming for kind of like a deep midnight blue mirroring a night sky */
 .main-header {
-  background-color: rgba(0, 0, 0, 0.3);
-  padding-bottom: 10px;
+  background-color: #1a2a4a;
+  padding: 40px 20px 30px;
+  text-align: center;
+  border-bottom: 4px solid #c9a84c;
 }
 
 .title {
-  text-align: center;
-  margin: 0;
-  font-size: 8em;
-  font-family: "Helvetica";
+  font-size: 3.5em;
+  color: #f9f7f4;
   font-weight: normal;
-  color: white;
+  letter-spacing: 2px;
 }
 
-#card-container {
+.subtitle {
+  color: #a8b8d0;
+  font-size: 1em;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+/* controls here - search bar and filter buttons */
+.controls {
+  padding: 30px 40px;
   display: flex;
-  justify-content: center;
-  margin: 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background-color: #f0f4f8;
+  border-bottom: 1px solid #dce3ea;
 }
 
-.card {
-  width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 5px;
+.controls-label {
+  font-size: 0.85em;
+  color: #6a7a8a;
+  letter-spacing: 0.5px;
 }
 
-.card-content {
-  padding: 20px;
-  font-family: "Verdana";
-  color: #777;
+#search-bar {
+  padding: 12px 20px;
+  font-size: 0.95em;
+  border: 1.5px solid #1a2a4a;
+  border-radius: 4px;
+  background-color: #fff;
+  width: 400px;
+  font-family: "Georgia", serif;
+  color: #2c2c2c;
+  outline: none;
 }
 
-.card-content h2 {
-  margin-top: 0;
-  font-size: 20px;
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-}
-
-.footer {
+.filter-buttons {
   display: flex;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 10px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 button {
-  text-align: center;
-  background-color: #666;
-  border: none;
-  padding-left: 10px;
-  padding-right: 10px;
-  height: 40px;
-  border-radius: 10px;
-  color: white;
-  font-size: 22px;
+  padding: 8px 18px;
+  border: 1px solid #1a2a4a;
+  background-color: transparent;
+  color: #1a2a4a;
+  font-family: "Georgia", serif;
+  font-size: 0.85em;
+  border-radius: 3px;
   cursor: pointer;
-  margin: 5px;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  background-color: #1a2a4a;
+  color: #f9f7f4;
+}
+
+/* card container and grid layout */
+#card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* card, inspired by airport departure boards */
+.card {
+  background-color: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+  background-color: #1a2a4a;
+  color: #f9f7f4;
+  font-size: 1em;
+  font-weight: normal;
+  letter-spacing: 1px;
+  padding: 14px 16px;
+  margin: 0;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card p {
+  font-size: 0.82em;
+  color: #4a4a4a;
+  margin-bottom: 5px;
+  line-height: 1.6;
+  border-bottom: 1px solid #f0ece6;
+  padding-bottom: 5px;
+}
+
+.card p:last-child {
+  border-bottom: none;
+}
+
+.category {
+  display: inline-block;
+  background-color: #c9a84c;
+  color: #fff;
+  font-size: 0.72em !important;
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-bottom: 10px !important;
+  border-bottom: none !important;
+  letter-spacing: 0.5px;
+}
+
+.fun-fact {
+  font-style: italic;
+  color: #7a6a4a !important;
+  margin-top: 8px !important;
+  font-size: 0.82em !important;
+  border-bottom: none !important;
+}
+
+/* footer design */
+.footer {
+  text-align: center;
+  padding: 30px;
+  color: #9a9a9a;
+  font-size: 0.85em;
+  border-top: 1px solid #e0dbd4;
+  margin-top: 20px;
 }
